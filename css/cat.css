@@ -1,0 +1,384 @@
+*,*:after,*:before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-webkit-transition: all 100ms ease-in;
+  			transition: all 100ms ease-in;
+}
+
+body {
+	background-color: #F6F7A7;
+}
+
+.cat {
+	position: absolute;
+	top:30%;
+	left: 30%;
+}
+
+.head {
+	position: absolute;
+	z-index: 2;
+	width: 400px;
+	height: 340px;
+	background: #fff;
+	border-radius: 50% 50% 35% 35%;
+	border: solid 2px #2e2e2e;
+    overflow: hidden;
+}
+
+.head .figure {
+	position: absolute;
+	left: 110px;
+	width: 180px;
+    height: 160px;
+    background: #8D8D8D;
+    border-radius: 0% 0% 50% 50%;
+    overflow: hidden;
+}
+
+.head .figure .orange-figure {
+    width: 90px;
+    height: 160px;
+    background: #F0AC6B;
+}
+
+.ears {
+	position: absolute;
+	z-index: 1;
+	width: 160px;
+	height: 200px;
+	background: #fff;
+	border: solid 2px #2e2e2e;
+}
+
+/*娘口三三的左耳*/
+.ears:nth-child(even) {
+	position: absolute;
+    left: -20px;
+	border-radius: 4% 80% 0% 50%;
+	-webkit-transform: rotate(-15deg);
+			transform: rotate(-15deg);
+	transition: transform 1s,left 1s;  /*缓慢改变耳朵的样式*/
+}
+
+/*右耳*/
+.ears:nth-child(odd) {
+	position: absolute;
+    left: 260px;
+	border-radius: 80% 4% 50% 0%;;
+	-webkit-transform: rotate(15deg);
+			transform: rotate(15deg);
+	transition: transform 1s,left 1s;		
+}
+
+/*鼠标悬浮时左耳样式*/
+.cat:hover .ears:nth-child(even) {
+	left: -10px;
+	border-radius: 4% 80% 0% 60%;
+	-webkit-transform: rotate(0deg);
+			transform: rotate(0deg);
+	transition: transform 1s,left 1s;
+}
+
+/*鼠标悬浮右耳样式*/
+.cat:hover .ears:nth-child(odd) {
+	left: 250px;
+	border-radius: 80% 4% 60% 0%;;
+	-webkit-transform: rotate(0deg);
+			transform: rotate(0deg);
+	transition: transform 1s,right 1s;
+}
+
+/*为了设置弯弯的眼使用的overflow*/
+.eyes {
+	position: absolute;
+	top: 200px;
+	left: 50px;
+	z-index: 2;
+	width: 300px;
+	height: 61px;
+	overflow: hidden;
+}
+
+/*眼睛*/
+.eye {
+	height: 100px;
+    width: 100px;
+    border: 2px solid #2e2e2e;
+    border-radius: 50%;
+}
+
+/*眼珠子*/
+.eye:before {
+	content: "";
+    position: absolute;
+    left: 32px;
+    z-index: 3;
+    height: 100px;
+    width: 30px;
+    background-color: #000;
+    border-radius: 7%;
+    transition: height 2s; 
+    transition: width 1s ease-in 0.2s
+}
+
+/*鼠标悬浮时眼珠子变宽变短*/
+.cat:hover .eye:before {
+    width: 38px;
+    border-radius: 12%;
+    transition: width 1s height 1s; 
+}
+
+/*弯弯的眼睛*/
+.eye .hedding {
+	position: absolute;
+	margin-top: 50px;
+	margin-left: -43px;
+	z-index: 4;
+    width: 180px;
+    height: 100px;
+    background: #fff;
+    border-top: 2px solid #2e2e2e;
+    border-radius: 50%;
+    transition: margin-top 1s; /*鼠标悬浮时猫咪眼睛的过渡*/
+}
+
+/*右眼*/
+.eye:nth-child(odd) {
+	position: absolute;
+	left: 200px;
+}
+
+.eye .blusher {
+    position: absolute;
+    height: 28px;
+    width: 70px;
+    z-index: 4;
+    background: red;
+    top: 36px;
+    left: 16px;
+    border-radius: 50%;
+    background-image: -moz-radial-gradient( 50% 50%, rgba(253,214,240,0.8) 0%, rgba(253,224,244,0.8) 66%, rgba(253,234,247,0.8) 100%);
+    background-image: -webkit-radial-gradient( 50% 50%, rgba(253,214,240,0.8) 0%, rgba(253,224,244,0.8) 66%, rgba(253,234,247,0.8) 100%);
+    background-image: -ms-radial-gradient( 50% 50%, rgba(253,214,240,0.8) 0%, rgba(253,224,244,0.8) 66%, rgba(253,234,247,0.8) 100%);
+    opacity: 0;
+}
+
+/*眼睛浮动属性*/
+.cat:hover .hedding {
+    margin-top: 30px;
+    transition: margin-top 1s;
+}
+
+/*鼠标悬浮时腮红的属性*/
+.cat:hover .blusher {
+    opacity: 0.8;
+    transition: opacity 0.5s ease-in 0.2s;
+}
+
+.nose {
+    position: absolute;
+    left: 185px;
+    top: 252px;
+    z-index: 3;
+    width: 30px;
+    height: 16px;
+    border-bottom: 8px solid #000;
+    border-radius: 0% 0% 50% 50%;
+}
+
+/*为了掩盖猫须*/
+.nose:before {
+	content: "";
+    position: absolute;
+    z-index: 2;
+    margin-top: -8px;
+    width: 30px;
+    height: 17px;
+    background: #fff;
+}
+
+.mouse {
+	position: absolute;
+	left: 153px;
+    top: 252px;
+    z-index: 2;
+	width: 200px;
+    height: 40px;
+    overflow: hidden;   
+}
+
+.mouse > div:first-child{
+	width: 50px;
+    height: 40px;
+    border-bottom: 4px solid #2e2e2e;
+    border-right: 4px solid #2e2e2e;
+    border-radius: 0% 40% 50% 20%;
+    transition:  border-radius  1s ;
+}
+
+.mouse > div:last-child {
+	margin-top: -40px;
+    margin-left: 45px;
+    width: 50px;
+    height: 40px;
+    border-bottom: 4px solid #2e2e2e;
+    border-left: 4px solid #2e2e2e;
+    border-radius: 40% 0% 20% 50%;
+    transition:  border-radius  1s ;
+}
+
+/*设置鼠标悬浮时猫须的弧度*/
+.cat:hover .mouse > div:first-child {
+	margin-left: 10px;
+	width: 40px;
+	border-radius: 50%;
+}
+
+.cat:hover .mouse > div:last-child {
+	width: 40px;
+	border-radius: 50%;
+}
+
+.left-huawen {
+	position: absolute;
+    top: 190px;
+    z-index: 2;
+    width: 380px; 
+	height: 80px;
+}
+
+.left-huawen div ,.right-huawen div{
+	margin-bottom: 5px;
+}
+
+.left-huawen > div:first-child {
+    width: 30px;
+    height: 10px;
+    margin-left: 30px;
+    border-top: 6px #E53941 solid;
+    border-radius: 30% 80% 20% 50%;
+    -ms-transform: rotate(25deg);
+    -moz-transform: rotate(25deg);
+    -webkit-transform: rotate(25deg);
+    		transform: rotate(25deg);
+}
+
+.left-huawen > div:nth-child(2) {
+    width: 20px;
+    height: 6px;
+    margin-left: 30px;
+    background-color: #E53941;
+    border-radius: 50% 50% 50% 50%;
+    -ms-transform: rotate(25deg);
+    -moz-transform: rotate(25deg);
+    -webkit-transform: rotate(25deg);
+        	transform: rotate(25deg);
+}
+
+.left-huawen> div:nth-child(3) {
+    width: 32px;
+    height: 10px;
+    margin-left: 18px;
+    border-bottom: 4px #E53941 solid;
+    border-radius: 30% 0% 90% 30%;
+    -ms-transform: rotate(25deg);
+    -moz-transform: rotate(25deg);
+    -webkit-transform: rotate(25deg);
+    		transform: rotate(25deg);
+}
+
+.left-huawen > div:nth-child(4) {
+    margin: 25px 0 0 38px;
+    width: 26px;
+    height: 20px;
+    border-bottom: 4px #E53941 solid;
+    border-radius: 30% 0% 90% 30%;
+    -ms-transform: rotate(30deg);
+    -moz-transform: rotate(30deg);
+    -webkit-transform: rotate(30deg);
+        	transform: rotate(30deg);
+}
+
+.left-huawen > div:last-child {
+	margin: -6px 0 0 50px;
+    width: 22px;
+    height: 10px;
+    border-bottom: 3px #E53941 solid;
+    border-radius: 0% 0% 50% 50%;
+    -ms-transform: rotate(-15deg);
+    -moz-transform: rotate(-15deg);
+    -webkit-transform: rotate(-15deg);
+     		transform: rotate(-15deg);
+}
+
+.right-huawen {
+	position: absolute;
+    top: 190px;
+    left: 330px;
+    z-index: 2;
+    width: 380px; 
+	height: 80px;
+}
+
+.right-huawen > div:first-child {
+    width: 30px;
+    height: 10px;
+    margin-left: 10px;
+    border-top: 6px #E53941 solid;
+    border-radius: 80% 30% 50% 20%;
+    -ms-transform: rotate(-25deg);
+    -moz-transform: rotate(-25deg);
+    -webkit-transform: rotate(-25deg);
+    		transform: rotate(-25deg);
+}
+
+.right-huawen > div:nth-child(2) {
+    width: 20px;
+    height: 6px;
+    margin-left: 18px;
+    background-color: #E53941;
+    border-radius: 50%;
+    -ms-transform: rotate(-25deg);
+    -moz-transform: rotate(-25deg);
+    -webkit-transform: rotate(-25deg);
+        	transform: rotate(-25deg);
+}
+
+.right-huawen> div:nth-child(3) {
+    width: 32px;
+    height: 10px;
+    margin-left: 22px;
+    border-bottom: 4px #E53941 solid;
+    border-radius: 0% 30% 30% 90%;
+    -ms-transform: rotate(-25deg);
+    -moz-transform: rotate(-25deg);
+    -webkit-transform: rotate(-25deg);
+    		transform: rotate(-25deg);
+}
+
+.right-huawen > div:nth-child(4) {
+    margin: 25px 0 0 2px;
+    width: 26px;
+    height: 20px;
+    border-bottom: 4px #E53941 solid;
+    border-radius: 0% 30% 30% 90%;
+    -ms-transform: rotate(-30deg);
+    -moz-transform: rotate(-30deg);
+    -webkit-transform: rotate(-30deg);
+        	transform: rotate(-30deg);
+}
+
+.right-huawen > div:last-child {
+	margin: -4px 0 0 -5px;
+    width: 22px;
+    height: 10px;
+    border-bottom: 3px #E53941 solid;
+    border-radius: 0% 0% 50% 50%;;
+    -ms-transform: rotate(15deg);
+    -moz-transform: rotate(15deg);
+    -webkit-transform: rotate(15deg);
+     		transform: rotate(15deg);
+}
+
